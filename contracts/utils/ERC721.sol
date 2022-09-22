@@ -9,7 +9,6 @@ import "../interfaces/IERC721Metadata.sol";
 import "../libraries/Address.sol";
 import "../utils/Context.sol";
 import "../libraries/Strings.sol";
-import "../utils/ERC165.sol";
 import "../libraries/AppStorage.sol";
 
 /**
@@ -17,29 +16,12 @@ import "../libraries/AppStorage.sol";
  * the Metadata extension, but not including the Enumerable extension, which is available separately as
  * {ERC721Enumerable}.
  */
-contract ERC721 is ERC165, Context, IERC721, IERC721Metadata {
+contract ERC721 is Context, IERC721Metadata {
     using Address for address;
     using Strings for uint256;
 
     AppStorage internal s;
 
-    // /**
-    //  * @dev Initializes the contract by setting a `name` and a `symbol` to the token collection.
-    //  */
-    // constructor(string memory name_, string memory symbol_) {
-    //     _name = name_;
-    //     _symbol = symbol_;
-    // }
-
-    /**
-     * @dev See {IERC165-supportsInterface}.
-     */
-    function supportsInterface(bytes4 interfaceId) public view virtual override(ERC165, IERC165) returns (bool) {
-        return
-            interfaceId == type(IERC721).interfaceId ||
-            interfaceId == type(IERC721Metadata).interfaceId ||
-            super.supportsInterface(interfaceId);
-    }
 
     /**
      * @dev See {IERC721-balanceOf}.
