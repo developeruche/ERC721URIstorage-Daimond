@@ -74,6 +74,10 @@ export async function deployDiamond() {
   }
   console.log("Completed diamond cut");
   DiamondAddress = diamond.address;
+
+  // let nft = await ethers.getContractAt("NFT", diamond.address);
+  // let nft_mint = await nft.safeMint("0x79A123e40100560f90De9574aBED7CF07cE0a9e6", "https://gateway.pinata.cloud/ipfs/QmbfQikWWapMxSyAHkuupDf78VsEWqDZpYD4adFGw7yD7E")
+  // console.log("CONSOLE_MINT: ", nft_mint);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
