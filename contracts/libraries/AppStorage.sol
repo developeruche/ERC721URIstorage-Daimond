@@ -12,6 +12,6 @@ struct AppStorage {
     mapping(uint256 => address) _tokenApprovals;
     mapping(address => mapping(address => bool)) _operatorApprovals;
     mapping(uint256 => string) _tokenURIs;
-    Counters.Counter _myCounter;
     uint256 MAX_SUPPLY;
+    Counters.Counter _myCounter;
 }
